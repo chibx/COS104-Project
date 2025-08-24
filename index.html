@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Interactive Resume - Jane Doe</title>
+        <base href="/" />
+
+        <!-- <link href="./src/public/style.css" rel="stylesheet" /> -->
+        <link rel="shortcut icon" href="./group-17.ico" type="image/x-icon" />
+    </head>
+    <body class="bg-slate-50 text-slate-800">
+        <!-- Header & Fixed Navigation -->
+        <header class="bg-white/80 backdrop-blur-lg shadow-sm fixed top-0 left-0 right-0 z-50">
+            <div class="max-w-5xl mx-auto px-6">
+                <nav class="flex justify-between items-center h-16">
+                    <a href="#home" class="text-xl font-bold text-slate-900">Jane Doe</a>
+                    <ul class="hidden sm:flex space-x-8 text-slate-600 font-medium">
+                        <li><a href="#about" class="hover:text-blue-500 transition-colors">About</a></li>
+                        <li><a href="#experience" class="hover:text-blue-500 transition-colors">Experience</a></li>
+                        <li><a href="#education" class="hover:text-blue-500 transition-colors">Education</a></li>
+                        <li><a href="#skills" class="hover:text-blue-500 transition-colors">Skills</a></li>
+                        <li><a href="#contact" class="hover:text-blue-500 transition-colors">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="max-w-5xl mx-auto px-6 pt-24">
+            <!-- Section: Home -->
+            <section id="home" class="min-h-screen flex items-center py-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-2">
+                        <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-4 leading-tight">Creative Web Developer</h1>
+                        <p class="text-lg text-slate-600 mb-8">
+                            I build beautiful, responsive, and user-friendly web applications. With a passion for clean code and modern design, I turn
+                            complex problems into elegant digital solutions.
+                        </p>
+                        <a
+                            href="#contact"
+                            class="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition-transform transform hover:scale-105 inline-block"
+                        >
+                            Get In Touch
+                        </a>
+                    </div>
+                    <div class="flex justify-center">
+                        <img
+                            src="https://placehold.co/400x400/e2e8f0/334155?text=BENJAMIN"
+                            alt="Portrait of Benjamin"
+                            class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-lg"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/334155?text=Photo';"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: About -->
+            <section id="about" class="py-20 border-t border-slate-200">
+                <h2 class="text-3xl font-bold text-center mb-12 text-slate-900">About Me</h2>
+                <div id="about-content" class="max-w-3xl mx-auto text-slate-600 leading-relaxed text-center">
+                    <!-- About content will be dynamically rendered here -->
+                </div>
+            </section>
+
+            <!-- Section: Experience -->
+            <section id="experience" class="py-20 border-t border-slate-200">
+                <h2 class="text-3xl font-bold text-center mb-12 text-slate-900">Work Experience</h2>
+                <div id="experience-content" class="space-y-12 max-w-3xl mx-auto">
+                    <!-- Experience items will be dynamically rendered here -->
+                </div>
+            </section>
+
+            <!-- Section: Education -->
+            <section id="education" class="py-20 border-t border-slate-200">
+                <h2 class="text-3xl font-bold text-center mb-12 text-slate-900">Education</h2>
+                <div id="education-content" class="space-y-8 max-w-3xl mx-auto">
+                    <!-- Education items will be dynamically rendered here -->
+                </div>
+            </section>
+
+            <!-- Section: Skills -->
+            <section id="skills" class="py-20 border-t border-slate-200">
+                <h2 class="text-3xl font-bold text-center mb-12 text-slate-900">Skills</h2>
+                <div id="skills-content" class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
+                    <!-- Skills will be dynamically rendered here -->
+                </div>
+            </section>
+
+            <!-- Section: Contact -->
+            <section id="contact" class="py-20 border-t border-slate-200">
+                <h2 class="text-3xl font-bold text-center mb-4 text-slate-900">Contact Me</h2>
+                <p class="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+                    Have a project in mind or just want to say hello? Feel free to send me a message.
+                </p>
+                <form id="contact-form" class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        />
+                        <p id="name-error" class="text-red-500 text-xs mt-1 h-4"></p>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        />
+                        <p id="email-error" class="text-red-500 text-xs mt-1 h-4"></p>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            required
+                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        ></textarea>
+                        <p id="message-error" class="text-red-500 text-xs mt-1 h-4"></p>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition-all">
+                        Send Message
+                    </button>
+                    <div id="form-success-message" class="text-green-600 font-medium text-center h-6"></div>
+                </form>
+            </section>
+        </main>
+
+        <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-200">
+            <p>&copy; 2024 Jane Doe. All rights reserved.</p>
+        </footer>
+
+        <script>
+            // This single script tag contains all the JavaScript, organized into a modular structure.
+        </script>
+
+        <script type="module" src="./src/index.ts"></script>
+    </body>
+</html>

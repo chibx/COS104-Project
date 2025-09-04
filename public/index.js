@@ -1,6 +1,5 @@
-import "./style.css";
 /**  This is the entry point that runs all the setup functions. */
-import { ContactForm, ContentRenderer, Navigation } from "./modules/logic";
+import { ContactForm, ContentRenderer, Navigation } from "./modules/logic.js";
 const App = {
     init() {
         ContentRenderer.renderAbout();

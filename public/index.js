@@ -10,4 +10,5 @@ const App = {
         ContactForm.init();
     },
 };
+
 App.init();

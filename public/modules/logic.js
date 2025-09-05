@@ -7,7 +7,7 @@ export const ContentRenderer = {
     renderAbout() {
         const container = document.getElementById("about-content");
         if (container) {
-            container.innerHTML = `<p>${aboutData.bio}</p>`;
+            container.innerHTML = `<p style="text-align: center">${aboutData.bio}</p>`;
         }
     },
     renderExperience() {
@@ -16,14 +16,16 @@ export const ContentRenderer = {
             container.innerHTML = experienceData
                 .map(
                     (job) => `
-                        <div class="relative pl-8 before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:bg-blue-500 before:rounded-full before:border-4 before:border-white">
-                            <h3 class="text-xl font-bold text-slate-800">${job.role}</h3>
-                            <p class="font-medium text-blue-600">${job.company} | ${job.period}</p>
-                            <p class="mt-2 text-slate-600">${job.description}</p>
+                        <div>
+                            <h3>${job.role}</h3>
+                            <em>${job.company} | ${job.period}</em>
+                            <ul>
+                            ${job.description.map((dsc) => `<li>${dsc}</li>`).join("\n")}
+                           </ul>
                         </div>
                     `
                 )
-                .join("");
+                .join("\n");
         }
     },
     renderEducation() {
@@ -32,26 +34,35 @@ export const ContentRenderer = {
             container.innerHTML = educationData
                 .map(
                     (edu) => `
-                        <div class="bg-white p-6 rounded-lg shadow-sm">
-                            <h3 class="text-xl font-bold text-slate-800">${edu.degree}</h3>
-                            <p class="font-medium text-blue-600">${edu.institution} | ${edu.period}</p>
-                            <p class="mt-2 text-slate-600">${edu.details}</p>
+                        <div style="margin-bottom: 15px;">
+                            <h3>${edu.degree}</h3>
+                            <em>${edu.institution} | ${edu.period}</em>
+                            <ul>
+                            ${edu.details.map((det) => `<li>${det}</li>`).join("\n")}
+                            </ul>
                         </div>
                     `
                 )
-                .join("");
+                .join("\n");
         }
     },
     renderSkills() {
         const container = document.getElementById("skills-content");
         if (container) {
-            container.innerHTML = skillsData
-                .map(
-                    (skill) => `
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">${skill}</span>
+            container.innerHTML = `<ul>` + skillsData.map((skill) => `<li>${skill[1]} <span>${skill[0]}</span></li>`).join("\n") + `</ul>`;
+            /*   `
+                <ul class="grid grid-cols-2 gap-4">
+                    <li><i class="fa-brands fa-html5"></i> HTML5</li>
+                    <li><i class="fa-brands fa-css3-alt"></i> CSS3</li>
+                    <li><i class="fa-brands fa-js"></i> JavaScript (ES6+)</li>
+                    <li><i class="fa-brands fa-react"></i> React.js</li>
+                    <li><i class="fa-brands fa-node-js"></i> Node.js</li>
+                    <li><i class="fa-brands fa-github"></i> Git & GitHub</li>
+                </ul>
+                `
                     `
-                )
-                .join("");
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">${skill}</span>
+                ` */
         }
     },
 };

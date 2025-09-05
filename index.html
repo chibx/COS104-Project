@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Jane Doe Resume</title>
         <link rel="stylesheet" href="./public/style.css" />
-        <!-- Add Font Awesome CDN for icons -->
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -14,30 +13,29 @@
             referrerpolicy="no-referrer"
         />
     </head>
-    <body class="text-white">
-        <!-- Header & Fixed Navigation -->
+    <body>
         <header>
-            <div class="max-w-5xl mx-auto px-6">
-                <nav class="flex justify-between items-center h-16">
+            <div>
+                <nav>
                     <div class="jane-doe">
-                        <a href="#home" class="text-2xl font-bold text-white">Jane Doe</a>
+                        <a href="#home">Jane Doe</a>
                     </div>
                     <div class="list-class">
-                        <ul class="hidden sm:flex space-x-8 font-medium">
+                        <ul>
                             <li>
-                                <a href="#about" class="text-white hover:text-blue-300 transition-colors">About</a>
+                                <a href="#about">About</a>
                             </li>
                             <li>
-                                <a href="#experience" class="text-white hover:text-blue-300 transition-colors">Experience</a>
+                                <a href="#experience">Experience</a>
                             </li>
                             <li>
-                                <a href="#education" class="text-white hover:text-blue-300 transition-colors">Education</a>
+                                <a href="#education">Education</a>
                             </li>
                             <li>
-                                <a href="#skills" class="text-white hover:text-blue-300 transition-colors">Skills</a>
+                                <a href="#skills">Skills</a>
                             </li>
                             <li>
-                                <a href="#contact" class="text-white hover:text-blue-300 transition-colors">Contact</a>
+                                <a href="#contact">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -45,63 +43,44 @@
             </div>
         </header>
 
-        <!-- Hero Section (Full Width) -->
-        <section id="home" class="min-h-screen flex items-center py-16">
-            <div class="hero w-full px-6 md:px-12">
-                <div class="hero-text flex-1">
-                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">Creative Web Developer</h1>
-                    <p class="text-lg text-gray-300 mb-8">
+        <section id="home">
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>Creative Web Developer</h1>
+                    <p>
                         I'm Jane Doe, a developer who loves creating beautiful, responsive, and user-friendly web applications. I combine clean code
                         with modern design to turn complex challenges into smooth, elegant digital experiences.
                     </p>
-                    <a href="#contact" class="text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 inline-block">
-                        Get In Touch
-                    </a>
+                    <a href="#contact"> Get In Touch </a>
                 </div>
-                <div class="hero-image flex-1 max-w-xs md:max-w-sm">
-                    <img
-                        src="https://placehold.co/400x400/e2e8f0/334155?text=Jane+Doe"
-                        alt="Portrait of Jane Doe"
-                        class="rounded-full w-full h-auto object-cover shadow-lg"
-                    />
+                <div class="hero-image">
+                    <img src="https://placehold.co/400x400/e2e8f0/334155?text=Jane+Doe" alt="Portrait of Jane Doe" />
                 </div>
             </div>
         </section>
 
-        <main class="max-w-5xl mx-auto px-6 pt-24">
-            <!-- Section: About -->
-            <section id="about" class="py-20 border-t border-gray-300">
-                <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
-                <div id="about-content" class="max-w-3xl mx-auto text-gray-200 leading-relaxed text-center">
-                    <p>
-                        I am a passionate web developer with over 5 years of experience in building responsive and user-centric websites. My expertise
-                        lies in HTML, CSS, and JavaScript, with a strong focus on modern frameworks like React. I thrive on solving complex problems
-                        and delivering elegant solutions.
-                    </p>
-                    <p>
-                        Outside of coding, I enjoy exploring new technologies, contributing to open-source projects, and mentoring aspiring
-                        developers. Let’s connect to create something amazing together!
-                    </p>
-                </div>
+        <main>
+            <section id="about">
+                <h2>About Me</h2>
+                <div id="about-content"></div>
             </section>
 
-            <!-- Section: Experience -->
-            <section id="experience" class="py-20 border-t border-gray-300">
-                <h2 class="text-3xl font-bold text-center mb-12">Experience</h2>
-                <div id="experience-content" class="max-w-3xl mx-auto text-gray-200 leading-relaxed">
+            <section id="experience">
+                <h2>Experience</h2>
+                <div id="experience-content">
                     <div>
-                        <h3 class="text-xl font-semibold">Senior Web Developer</h3>
-                        <p class="text-sm text-gray-400">Tech Innovations Inc. | Jan 2022 - Present</p>
-                        <ul class="list-disc list-inside mt-2">
+                        <h3>Senior Web Developer</h3>
+                        <p>Tech Innovations Inc. | Jan 2022 - Present</p>
+                        <ul>
                             <li>Designed and developed responsive websites using React and Tailwind CSS.</li>
                             <li>Led a team of 5 developers to deliver projects on time and within budget.</li>
                             <li>Optimized website performance, reducing load time by 40%.</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mt-6">Junior Developer</h3>
-                        <p class="text-sm text-gray-400">Web Solutions Ltd. | Jun 2019 - Dec 2021</p>
-                        <ul class="list-disc list-inside mt-2">
+                        <h3>Junior Developer</h3>
+                        <p>Web Solutions Ltd. | Jun 2019 - Dec 2021</p>
+                        <ul>
                             <li>Built and maintained client websites using HTML, CSS, and JavaScript.</li>
                             <li>Collaborated with designers to implement UI/UX improvements.</li>
                             <li>Assisted in debugging and resolving cross-browser compatibility issues.</li>
@@ -110,80 +89,47 @@
                 </div>
             </section>
 
-            <!-- Section: Education -->
-            <section id="education" class="py-20 border-t border-gray-300">
-                <h2 class="text-3xl font-bold text-center mb-12">Education</h2>
-                <div id="education-content" class="max-w-3xl mx-auto text-gray-200 leading-relaxed">
-                    <h3 class="text-xl font-semibold">B.Sc. Computer Science</h3>
-                    <p class="text-sm text-gray-400">University of Lagos | 2015 - 2019</p>
+            <section id="education">
+                <h2>Education</h2>
+                <div id="education-content">
+                    <h3>B.Sc. Computer Science</h3>
+                    <p>University of Lagos | 2015 - 2019</p>
                     <p>Graduated with First Class Honors, specializing in web development and software engineering.</p>
-                    <h3 class="text-xl font-semibold mt-6">Web Development Bootcamp</h3>
-                    <p class="text-sm text-gray-400">Code Academy | 2019</p>
+                    <h3>Web Development Bootcamp</h3>
+                    <p>Code Academy | 2019</p>
                     <p>Intensive 12-week program focusing on full-stack development with React and Node.js.</p>
                 </div>
             </section>
 
-            <!-- Section: Skills -->
-            <section id="skills" class="py-20 border-t border-gray-300">
-                <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
-                <div id="skills-content" class="max-w-3xl mx-auto text-gray-200 leading-relaxed">
-                    <ul class="grid grid-cols-2 gap-4">
-                        <li><i class="fa-brands fa-html5"></i> HTML5</li>
-                        <li><i class="fa-brands fa-css3-alt"></i> CSS3</li>
-                        <li><i class="fa-brands fa-js"></i> JavaScript (ES6+)</li>
-                        <li><i class="fa-brands fa-react"></i> React.js</li>
-                        <li><i class="fa-brands fa-node-js"></i> Node.js</li>
-                        <li><i class="fa-brands fa-github"></i> Git & GitHub</li>
-                    </ul>
-                </div>
+            <section id="skills">
+                <h2>Skills</h2>
+                <div id="skills-content"></div>
             </section>
 
-            <!-- Section: Contact -->
-            <section id="contact" class="py-20 border-t border-gray-300">
-                <h2 class="text-3xl font-bold text-center mb-12">Contact</h2>
-                <div id="contact-content" class="max-w-3xl mx-auto">
-                    <form id="contact-form" class="text-gray-800">
-                        <div class="mb-4">
-                            <label for="name" class="block text-sm font-medium mb-1">Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                class="w-full p-2 border border-gray-300 rounded"
-                                placeholder="Your Name"
-                                required
-                            />
+            <section id="contact">
+                <h2>Contact</h2>
+                <div id="contact-content">
+                    <form id="contact-form">
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required />
                         </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-sm font-medium mb-1">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                class="w-full p-2 border border-gray-300 rounded"
-                                placeholder="your.email@example.com"
-                                required
-                            />
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
                         </div>
-                        <div class="mb-4">
-                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                class="w-full p-2 border border-gray-300 rounded h-24"
-                                placeholder="Your message here..."
-                                required
-                            ></textarea>
+                        <div>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
                         </div>
-                        <button type="submit" class="bg-teal-700 text-white py-2 px-4 rounded hover:bg-teal-800">Send Message</button>
+                        <button type="submit">Send Message</button>
                     </form>
                 </div>
             </section>
         </main>
 
-        <!-- Footer -->
         <footer>
-            <div class="max-w-5xl mx-auto px-6 flex justify-between items-center">
+            <div>
                 <p>&copy; 2025 Jane Doe. All rights reserved.</p>
                 <p class="footer-message">Let's connect!</p>
             </div>

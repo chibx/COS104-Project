@@ -8,35 +8,44 @@
         <link rel="stylesheet" href="./public/style.css" />
     </head>
     <body>
+        <!-- Navigation -->
         <header>
-            <div>
-                <nav>
-                    <div class="jane-doe">
-                        <a href="#home">Jane Doe</a>
-                    </div>
-                    <div class="list-class">
-                        <ul>
-                            <li>
-                                <a href="#about">About</a>
-                            </li>
-                            <li>
-                                <a href="#experience">Experience</a>
-                            </li>
-                            <li>
-                                <a href="#education">Education</a>
-                            </li>
-                            <li>
-                                <a href="#skills">Skills</a>
-                            </li>
-                            <li>
-                                <a href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <a href="#home">Jane Doe</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span class="menu-icon"></span>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <ul class="desktop-nav">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile Navigation (hidden by default) -->
+                <div class="mobile-nav">
+                    <ul>
+                        <li><a href="#about" class="mobile-nav-link">About</a></li>
+                        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+                        <li><a href="#education" class="mobile-nav-link">Education</a></li>
+                        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+                        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
         </header>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-nav-overlay"></div>
 
+        <!-- Hero Section -->
         <section id="home">
             <div class="hero">
                 <div class="hero-text">
@@ -48,11 +57,12 @@
                     <a href="#contact"> Get In Touch </a>
                 </div>
                 <div class="hero-image">
-                    <img src="https://placehold.co/400x400/e2e8f0/334155?text=Jane+Doe" alt="Portrait of Jane Doe" />
+                    <img src="https://www.dropbox.com/scl/fi/rqsm9xtkolv8q4fuebkxp/chibix.jpg?rlkey=lqs80yw0eerp0b1pce8p4247i&st=tw80hpnh&raw=1" alt="Portrait of Jane Doe" />
                 </div>
             </div>
         </section>
 
+        <!-- other sections -->
         <main>
             <section id="about">
                 <h2>About Me</h2>
@@ -74,6 +84,7 @@
                 <div id="skills-content"></div>
             </section>
 
+            <!-- Contact Me form -->
             <section id="contact">
                 <h2>Contact</h2>
                 <div id="contact-content">
@@ -81,21 +92,29 @@
                         <div>
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" required />
+                            <div id="name-error"></div>
                         </div>
                         <div>
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" placeholder="your.email@example.com" autocomplete="email" required />
+                            <div id="email-error"></div>
                         </div>
                         <div>
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="10" placeholder="Your message here..." required></textarea>
+                            <div id="message-error"></div>
                         </div>
                         <button type="submit">Send Message</button>
+
                     </form>
+                    <div id="form-success-message">
+                        This should not show up...
+                    </div>
                 </div>
             </section>
         </main>
 
+        <!-- footer -->
         <footer>
             <div>
                 <p>&copy; 2025 Jane Doe. All rights reserved.</p>
@@ -103,6 +122,7 @@
             </div>
         </footer>
 
+        <!-- JavaScript for interactions -->
         <script type="module" src="./public/index.js"></script>
-    </body>
+</body>
 </html>

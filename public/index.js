@@ -1,5 +1,7 @@
 /**  This is the entry point that runs all the setup functions. */
-import { ContactForm, ContentRenderer, Navigation } from "./modules/logic.js";
+import { ContactForm, ContentRenderer } from "./modules/logic.js";
+import { Navigation } from "./modules/navigation.js";
+import Animatino from "./modules/animations.js";
 const App = {
     init() {
         ContentRenderer.renderAbout();
@@ -8,6 +10,7 @@ const App = {
         ContentRenderer.renderSkills();
         Navigation.init();
         ContactForm.init();
+        Animatino.init();
     },
 };
 

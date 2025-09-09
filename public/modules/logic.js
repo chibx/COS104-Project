@@ -66,31 +66,7 @@ export const ContentRenderer = {
         }
     },
 };
-/**
- * Handles navigation logic, like active link highlighting.
- */
-export const Navigation = {
-    init() {
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll("nav a");
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach((link) => {
-                            link.classList.remove("nav-active");
-                            if (link.getAttribute("href")?.substring(1) === entry.target.id) {
-                                link.classList.add("nav-active");
-                            }
-                        });
-                    }
-                });
-            },
-            { rootMargin: "-50% 0px -50% 0px" }
-        );
-        sections.forEach((section) => observer.observe(section));
-    },
-};
+
 /**
  * Handles form validation and submission.
  */
@@ -98,61 +74,79 @@ export const ContactForm = {
     init() {
         const form = document.getElementById("contact-form");
         if (!form) return;
+
         form.addEventListener("submit", (e) => {
+            // Stop the form from submitting right away.
             e.preventDefault();
+
             const name = form.elements.namedItem("name");
             const email = form.elements.namedItem("email");
             const message = form.elements.namedItem("message");
+
+            // Store the validation results in variables.
             const isNameValid = this.validateField(name, "Name is required.");
             const isEmailValid = this.validateEmail(email);
             const isMessageValid = this.validateField(message, "Message is required.");
+
+            // Noaw, check if all fields are valid.
             if (isNameValid && isEmailValid && isMessageValid) {
+                // If they are, then proceed with saving and resetting the form.
                 this.saveToSessionStorage({
                     name: name.value,
                     email: email.value,
                     message: message.value,
                 });
+
                 const successMsg = document.getElementById("form-success-message");
-                successMsg.textContent = "Thank you! Your message has been sent.";
+                successMsg.innerText = "Thank you! Your message has been sent.";
+                successMsg.classList.add("show")
+                
+                form.style.display = "none"
                 form.reset();
-                setTimeout(() => {
-                    successMsg.textContent = "";
-                }, 5000);
+                
+                // setTimeout(() => {
+                //     successMsg.classList.remove("show")
+                //     successMsg.innerText = "";
+                // }, 5000);
+
             }
         });
     },
+
+    // ... (rest of the code for validateField, validateEmail, and saveToSessionStorage is correct)
     validateField(field, errorMessage) {
         const errorEl = document.getElementById(`${field.id}-error`);
         if (field.value.trim() === "") {
-            errorEl.textContent = errorMessage;
+            errorEl.innerText = errorMessage;
             field.classList.add("border-red-500");
             return false;
         } else {
-            errorEl.textContent = "";
+            errorEl.innerText = "";
             field.classList.remove("border-red-500");
             return true;
         }
     },
+    
     validateEmail(field) {
         const errorEl = document.getElementById(`${field.id}-error`);
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (field.value.trim() === "") {
-            errorEl.textContent = "Email is required.";
+            errorEl.innerText = "Email is required.";
             field.classList.add("border-red-500");
             return false;
         } else if (!emailRegex.test(field.value)) {
-            errorEl.textContent = "Please enter a valid email address.";
+            errorEl.innerText = "Please enter a valid email address.";
             field.classList.add("border-red-500");
             return false;
         } else {
-            errorEl.textContent = "";
+            errorEl.innerText = "";
             field.classList.remove("border-red-500");
             return true;
         }
     },
+    
     saveToSessionStorage(data) {
         try {
-            // We store messages in an array to keep a record during the session.
             const messages = JSON.parse(sessionStorage.getItem("contactMessages") || "[]") || [];
             messages.push({ ...data, timestamp: new Date().toISOString() });
             sessionStorage.setItem("contactMessages", JSON.stringify(messages));

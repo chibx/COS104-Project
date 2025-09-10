@@ -503,7 +503,7 @@ section:not(#home) li svg {
 #contact-form {
     background-color: #ffffff;
     border: 1px solid #e5e7eb;
-    padding: 1.5rem;
+    padding: 0.8rem;
     border-radius: 12px;
     animation: fadeIn 1s ease forwards;
 }
